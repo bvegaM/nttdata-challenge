@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "f74790a9-d58d-4d3c-9de8-3f63b862ece8",
+		"name": "NTTDATA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20287435"
+	},
+	"item": [
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "Get Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/clients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client by dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/nttdata/clients/0150749059",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"clients",
+								"0150749059"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save clients",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0101737674\",\r\n  \"contrasenia\": \"luz.123\",\r\n  \"direccion\": \"colombia y paraguay\",\r\n  \"edad\": 60,\r\n  \"estado\": true,\r\n  \"genero\": \"F\",\r\n  \"nombre\": \"Luz Moreno\",\r\n  \"telefono\": \"0985164142\",\r\n  \"usuario\": \"lmoreno\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/clients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Andres Molina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/clients/0150749059",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"clients",
+								"0150749059"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete client By Dni",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/clients/0150749059",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"clients",
+								"0150749059"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "Get account by number Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/accounts/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"accounts",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accounts by Client dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/accounts/dni/0150749059",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"accounts",
+								"dni",
+								"0150749059"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account by numberAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/accounts/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"accounts",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteCedula\": \"0150749059\",\r\n  \"estado\": true,\r\n  \"numeroCuenta\": \"00010\",\r\n  \"saldo\": 1500,\r\n  \"tipoCuenta\": \"AHORRO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/accounts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account by numberAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/accounts/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"accounts",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movements",
+			"item": [
+				{
+					"name": "Get Movements by Client dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/movements/dni/0150749059",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"movements",
+								"dni",
+								"0150749059"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Movements by Account number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/movements/accountNumber/00001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"movements",
+								"accountNumber",
+								"00001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movements by filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/movements/filter/?dni=0150749059&endDate=2022-09-31&initDate=2022-09-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"movements",
+								"filter",
+								""
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "0150749059"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-09-31"
+								},
+								{
+									"key": "initDate",
+									"value": "2022-09-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create movement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"numeroCuenta\": \"00001\",\r\n  \"tipoMovimiento\": \"DEPOSITO\",\r\n  \"valor\": 1350\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nttdata/movements/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nttdata",
+								"movements",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

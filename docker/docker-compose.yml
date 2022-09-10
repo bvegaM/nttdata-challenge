@@ -1,0 +1,42 @@
+version: '2.1'
+volumes:
+  postgres-data:
+
+services:
+  srvdb:
+    image: postgres
+    container_name: srvdb
+    hostname: srvdb
+    environment:
+      POSTGRES_USER: nttdata
+      POSTGRES_DB: nttdata
+      POSTGRES_PASSWORD: nttdata.123
+    volumes:
+      - ./BaseDatos.sql:/docker-entrypoint-initdb.d/BaseDatos.sql
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "nttdata", "-U", "nttdata" ]
+      interval: 10s
+      timeout: 60s
+      retries: 1
+    networks:
+      - nttdata-network
+
+  nttdata:
+    image: nttdata-challenge:latest
+    depends_on:
+      srvdb:
+        condition: service_healthy
+    container_name: nttdata
+    ports:
+      - 8080:8080
+
+    networks:
+      - nttdata-network
+
+
+networks:
+  nttdata-network:
+    driver: bridge
